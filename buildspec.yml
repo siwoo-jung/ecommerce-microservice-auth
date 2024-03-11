@@ -11,7 +11,7 @@ phases:
       - echo Compiling the code...
   post_build:
     commands:
-      - aws lambda update-function-configuration --function-name $LAMBDA_FUNCTION --zip-file $ZIP_DIR
+      - aws lambda update-function-code --function-name $LAMBDA_FUNCTION --s3-bucket $BUCKET_NAME --s3-key $FILENAME --s3-object-version null Version
 artifacts:
   files:
     - "**/*"
