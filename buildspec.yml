@@ -9,7 +9,7 @@ phases:
     commands:
       - echo Build started on `date`
       - echo "zipping.."
-      - zip -r9 ../myFunc.zip .
+      - zip -r9 myFunc.zip .
 
   post_build:
     commands:
