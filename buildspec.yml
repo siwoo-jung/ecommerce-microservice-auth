@@ -5,6 +5,8 @@ phases:
   install:
     runtime-versions:
       nodejs: 18
+    commands:
+      - mkdir lib
   build:
     commands:
       - echo Build started on `date`
