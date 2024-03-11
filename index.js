@@ -1,8 +1,10 @@
 export const handler = async (event) => {
+  // TODO implement
+  console.log(event, "event");
   const token = event["authorizationToken"];
-  let permission = "Deny";
 
-  if (token == process.env.SECRET_TOKEN) {
+  let permission = "Deny";
+  if (token == "my-secret-token") {
     permission = "Allow";
   }
 
@@ -13,11 +15,14 @@ export const handler = async (event) => {
       Statement: [
         {
           Action: "execute-api:Invoke",
-          Resource: [process.env.RESOURCE_GET_USERS],
+          Resource: [
+            "arn:aws:execute-api:ap-southeast-2:654654470017:w103dzpock/*/GET/users",
+          ],
           Effect: `${permission}`,
         },
       ],
     },
   };
+
   return authResponse;
 };
