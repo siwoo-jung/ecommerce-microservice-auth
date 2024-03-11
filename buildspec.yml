@@ -1,0 +1,17 @@
+# buildspec.yml
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 18
+  build:
+    commands:
+      - echo Build started on `date`
+      - echo Compiling the code...
+  post_build:
+    commands:
+      - aws lambda update-function-configuration --function-name ${process.env.LAMBDA_FUNCTION} --zip-file ${process.env.ZIP_DIR}
+  artifacts:
+    files:
+      - "**/*"
