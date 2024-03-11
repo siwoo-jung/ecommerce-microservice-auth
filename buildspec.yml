@@ -5,16 +5,11 @@ phases:
   install:
     runtime-versions:
       nodejs: 18
-    commands:
-      - mkdir lib
   build:
     commands:
       - echo Build started on `date`
       - echo "zipping.."
-      - cd lib
       - zip -r9 ../myFunc.zip .
-      - cd ..
-      - zip -g myFunc.zip index.js
 
   post_build:
     commands:
