@@ -1,10 +1,7 @@
 export const handler = async (event) => {
-  // TODO implement
-  console.log(event, "event");
-
   const token = event["authorizationToken"];
-  const resource = process.env.RESOURCE_GET_USERS;
   const myToken = process.env.SECRET_TOKEN;
+  const resource = event["methodArn"];
   let permission = "Deny";
 
   if (token == myToken) {
@@ -12,7 +9,7 @@ export const handler = async (event) => {
   }
 
   const authResponse = {
-    principalId: "authLambda-to-microservice-Users",
+    principalId: "authLambda-to-microservice",
     policyDocument: {
       Version: "2012-10-17",
       Statement: [
@@ -24,6 +21,5 @@ export const handler = async (event) => {
       ],
     },
   };
-
   return authResponse;
 };

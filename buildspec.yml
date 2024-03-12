@@ -15,4 +15,4 @@ phases:
     commands:
       - aws lambda update-function-code --function-name $LAMBDA_FUNCTION --zip-file fileb://myFunc.zip
       - sleep 30
-      - aws lambda update-function-configuration --function-name $LAMBDA_FUNCTION --environment "Variables={SECRET_TOKEN=$SECRET_TOKEN,RESOURCE_GET_USERS=$RESOURCE_GET_USERS}"
+      - aws lambda update-function-configuration --function-name $LAMBDA_FUNCTION --environment "Variables={SECRET_TOKEN=$SECRET_TOKEN}"
