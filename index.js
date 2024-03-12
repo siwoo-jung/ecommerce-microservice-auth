@@ -1,4 +1,7 @@
+import jwt from "jsonwebtoken";
+
 export const handler = async (event) => {
+  console.log(event);
   const token = event["authorizationToken"];
   const myToken = process.env.SECRET_TOKEN;
   const resource = event["methodArn"];
