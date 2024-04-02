@@ -12,5 +12,8 @@
   "type": "module",
   "dependencies": {
     "jsonwebtoken": "^9.0.2"
+  },
+  "devDependencies": {
+    "@types/jsonwebtoken": "^9.0.6"
   }
 }
