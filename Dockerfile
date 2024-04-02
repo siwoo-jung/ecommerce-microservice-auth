@@ -9,6 +9,4 @@ RUN npm i
 
 COPY . .
 
-RUN npm run build
-
 CMD [ "index.js" ]
