@@ -9,4 +9,4 @@ RUN npm i
 
 COPY . .
 
-CMD [ "index.js" ]
+CMD [ "index.handler" ]
